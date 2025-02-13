@@ -1,69 +1,129 @@
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::collections::{HashMap};
+use std::sync::{Arc, Mutex};
+use std::thread;
 
-// Derive Debug to allow printing the Block struct
+use libp2p::{Swarm, PeerId, yamux, gossipsub, Transport};
+use libp2p::core::upgrade;
+use libp2p::identity;
+use libp2p::noise;
+use tokio::runtime::Runtime;
+use wasmer::{Instance, Module, Store, imports, Value};
+
+/// **Block Structure**
 #[derive(Debug, Clone)]
-pub struct Block {
-    pub index: u64,
-    pub previous_hash: String,
-    pub timestamp: u64,
-    pub data: String,
-    pub hash: String,
+struct Block {
+    index: u64,
+    previous_hash: String,
+    transactions: Vec<Transaction>,
+    hash: String,
+    nonce: u64,
+    validator: Option<String>, // Validator in PoS
 }
 
-impl Block {
-    fn new(index: u64, previous_hash: String, data: String) -> Self {
-        let timestamp = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .expect("Time went backwards")
-            .as_secs();
+/// **Transaction Structure**
+#[derive(Debug, Clone)]
+struct Transaction {
+    inputs: Vec<String>,
+    outputs: Vec<(String, u64)>,
+}
 
-        let hash = format!("{:x}", md5::compute(format!("{}{}{}{}", index, previous_hash, timestamp, data)));
+/// **Smart Contract Structure (WASM Execution)**
+#[derive(Debug, Clone)]
+struct SmartContract {
+    contract_code: Vec<u8>,
+}
 
-        Block {
-            index,
-            previous_hash,
-            timestamp,
-            data,
-            hash,
-        }
+impl SmartContract {
+    fn execute(&self, store: &mut Store, input: i32) -> i32 {
+        let module = Module::new(store, &self.contract_code).expect("Failed to create WASM module");
+        let import_object = imports! {};
+        let instance = Instance::new(store, &module, &import_object).expect("Failed to instantiate WASM module");
+        let func = instance.exports.get_function("execute").expect("Function 'execute' not found");
+        let result = func.call(store, &[Value::I32(input)]).expect("Execution failed");
+        result[0].i32().unwrap()
     }
 }
 
-// Derive Debug to allow printing the Blockchain struct
-#[derive(Debug)]
-pub struct Blockchain {
-    pub blocks: Vec<Block>,
+/// **P2P Network (libp2p)**
+struct P2PNetwork {
+    peer_id: PeerId,
+    swarm: Swarm<gossipsub::Behaviour>,
+}
+
+impl P2PNetwork {
+    fn new() -> Self {
+        let id_keys = identity::Keypair::generate_ed25519();
+        let peer_id = PeerId::from(id_keys.public());
+        let transport = libp2p::tcp::Transport::<libp2p::tcp::tokio::Tcp>::new(libp2p::tcp::Config::default()).boxed();
+ 
+        let noise = noise::Config::new(&id_keys).unwrap();
+        let yamux = yamux::Config::default();
+
+        let transport = transport.upgrade(upgrade::Version::V1)
+    .authenticate(noise)
+    .multiplex(yamux)
+    .boxed();
+
+        let behaviour = gossipsub::Behaviour::new(
+            gossipsub::MessageAuthenticity::Signed(id_keys.clone()),
+            gossipsub::Config::default()
+        ).expect("Failed to create Gossipsub");
+
+        let swarm = Swarm::new(transport, behaviour, peer_id.clone(), libp2p::swarm::Config::with_executor(Box::new(|fut| {
+            tokio::spawn(fut);
+        })));
+        
+        P2PNetwork { peer_id, swarm }
+    }
+}
+
+/// **Blockchain Structure with PoS Staking, Smart Contracts, and P2P**
+struct Blockchain {
+    chain: Mutex<Vec<Block>>, // Stores blocks
+    difficulty: usize,
+    stakes: Mutex<HashMap<String, u64>>, // Stores staking information
+    contracts: Mutex<Vec<SmartContract>>, // Stores deployed smart contracts
+    network: P2PNetwork, // P2P Network Integration
 }
 
 impl Blockchain {
-    pub fn new() -> Self {
-        let mut blockchain = Blockchain { blocks: Vec::new() };
-        blockchain.add_block("Genesis Block".to_string());
-        blockchain
+    /// **Initialize Blockchain with P2P Network**
+    fn new() -> Arc<Self> {
+        Arc::new(Self {
+            network: P2PNetwork::new(),
+            chain: Mutex::new(Vec::new()),
+            difficulty: 4,
+            stakes: Mutex::new(HashMap::new()),
+            contracts: Mutex::new(Vec::new()),
+        })
     }
-
-    pub fn add_block(&mut self, data: String) {
-        let index = self.blocks.len() as u64;
-        let previous_hash = if index == 0 {
-            String::from("0")
-        } else {
-            self.blocks[index as usize - 1].hash.clone()
-        };
-        let block = Block::new(index, previous_hash, data);
-        self.blocks.push(block);
+    
+    /// **Deploy a Smart Contract**
+    fn deploy_contract(&self, contract_code: Vec<u8>) {
+        let mut contracts = self.contracts.lock().unwrap();
+        contracts.push(SmartContract { contract_code });
+        println!("✅ Smart Contract Deployed Successfully!");
     }
 }
 
 fn main() {
-    let mut blockchain = Blockchain::new();
-
-    // Print the blockchain with Debug trait
-    println!("Blockchain created: {:?}", blockchain);
-
-    blockchain.add_block("Second Block".to_string());
-    blockchain.add_block("Third Block".to_string());
-
-    // Print the blockchain after adding blocks
-    println!("Blockchain after adding new blocks: {:?}", blockchain);
+    let blockchain = Blockchain::new();
+    let rt = Runtime::new().unwrap();
+    
+    println!("🚀 Nexa Blockchain with Smart Contracts and P2P Started!");
+    
+    // Deploy a dummy smart contract (example WASM bytecode)
+    let dummy_wasm_code = vec![0x00, 0x61, 0x73, 0x6D, 0x01, 0x00, 0x00, 0x00];
+    blockchain.deploy_contract(dummy_wasm_code);
+    
+    // Start P2P Network (Simulated)
+    thread::spawn(move || {
+        loop {
+            println!("🌍 P2P Network Running...");
+            thread::sleep(std::time::Duration::from_secs(5));
+        }
+    });
+    
+    rt.block_on(async {});
 }
 
