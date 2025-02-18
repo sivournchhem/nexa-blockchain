@@ -1,0 +1,63 @@
+nohup: ignoring input
+🚀 Nexa Blockchain Started!
+🚀 Nexa TCP P2P Network is Listening on 0.0.0.0:30333
+⛏️ [Consensus] Block 1 produced at SystemTime { tv_sec: 1739873326, tv_nsec: 114911411 } with previous_hash: genesis and hash: 370cfb1163b269c9f651aa00107b9335c602c51dad9d1ed8614ac82273112ec9
+✅ Block 1 added to the blockchain!
+⛏️ [Consensus] Block 2 produced at SystemTime { tv_sec: 1739873336, tv_nsec: 115862998 } with previous_hash: 370cfb1163b269c9f651aa00107b9335c602c51dad9d1ed8614ac82273112ec9 and hash: ec66cd81c1b774540bc03108e2507b5901c468e1ba8a3e2a1ab03e081b6282d1
+✅ Block 2 added to the blockchain!
+⛏️ [Consensus] Block 3 produced at SystemTime { tv_sec: 1739873346, tv_nsec: 117223565 } with previous_hash: ec66cd81c1b774540bc03108e2507b5901c468e1ba8a3e2a1ab03e081b6282d1 and hash: 43182144fdd938657994ff95c20120fad233853108bb97dab15fc11348118411
+✅ Block 3 added to the blockchain!
+⛏️ [Consensus] Block 4 produced at SystemTime { tv_sec: 1739873356, tv_nsec: 119016587 } with previous_hash: 43182144fdd938657994ff95c20120fad233853108bb97dab15fc11348118411 and hash: 17425bd3b3eb90150b179b3cdc58b8a51e337191b946301e9fb91eed1ca0a306
+✅ Block 4 added to the blockchain!
+⛏️ [Consensus] Block 5 produced at SystemTime { tv_sec: 1739873366, tv_nsec: 119691666 } with previous_hash: 17425bd3b3eb90150b179b3cdc58b8a51e337191b946301e9fb91eed1ca0a306 and hash: a011447807351d344ed9308a055b75cd29514d53b62451b8ec9ce335a4df4dde
+✅ Block 5 added to the blockchain!
+⛏️ [Consensus] Block 6 produced at SystemTime { tv_sec: 1739873376, tv_nsec: 120859187 } with previous_hash: a011447807351d344ed9308a055b75cd29514d53b62451b8ec9ce335a4df4dde and hash: f72f7293882fd0af7eece94d7840e0fe8e38ab71524d25623ad0c2a43248f05e
+✅ Block 6 added to the blockchain!
+⛏️ [Consensus] Block 7 produced at SystemTime { tv_sec: 1739873386, tv_nsec: 121693308 } with previous_hash: f72f7293882fd0af7eece94d7840e0fe8e38ab71524d25623ad0c2a43248f05e and hash: 99bc700a0a618a370ae679bf3aef9fb2e5761c69d64d9bf6bde598bb39f065ad
+✅ Block 7 added to the blockchain!
+⛏️ [Consensus] Block 8 produced at SystemTime { tv_sec: 1739873396, tv_nsec: 123234831 } with previous_hash: 99bc700a0a618a370ae679bf3aef9fb2e5761c69d64d9bf6bde598bb39f065ad and hash: c77dc5dd0d765c90437d73d68069b50305131faa003b55aea96c65863e5d06db
+✅ Block 8 added to the blockchain!
+⛏️ [Consensus] Block 9 produced at SystemTime { tv_sec: 1739873406, tv_nsec: 124906352 } with previous_hash: c77dc5dd0d765c90437d73d68069b50305131faa003b55aea96c65863e5d06db and hash: c2369088472afb230ca0eadf4f179a978e8e6a556ff16836294cfc8f310a637c
+✅ Block 9 added to the blockchain!
+⛏️ [Consensus] Block 10 produced at SystemTime { tv_sec: 1739873416, tv_nsec: 125533977 } with previous_hash: c2369088472afb230ca0eadf4f179a978e8e6a556ff16836294cfc8f310a637c and hash: 63ec74baab0cc8c86dd4e18b4a1d6de240bf3b2bc9cd4c798eeb85b733885827
+✅ Block 10 added to the blockchain!
+⛏️ [Consensus] Block 11 produced at SystemTime { tv_sec: 1739873426, tv_nsec: 126445736 } with previous_hash: 63ec74baab0cc8c86dd4e18b4a1d6de240bf3b2bc9cd4c798eeb85b733885827 and hash: a3956bfe320f0e860d5ab7797f0559454854c8e01d39343212df11a2b2a91264
+✅ Block 11 added to the blockchain!
+⛏️ [Consensus] Block 12 produced at SystemTime { tv_sec: 1739873436, tv_nsec: 128261294 } with previous_hash: a3956bfe320f0e860d5ab7797f0559454854c8e01d39343212df11a2b2a91264 and hash: 6410553f4ba59ed0a480fb0ea39f926d3ad16c2ca50635775762b5520aee115f
+✅ Block 12 added to the blockchain!
+⛏️ [Consensus] Block 13 produced at SystemTime { tv_sec: 1739873446, tv_nsec: 129316813 } with previous_hash: 6410553f4ba59ed0a480fb0ea39f926d3ad16c2ca50635775762b5520aee115f and hash: 55d3b25a5ddc7f92678194cd10b2b80698adb2149a5f8a44918a67f60b169306
+✅ Block 13 added to the blockchain!
+⛏️ [Consensus] Block 14 produced at SystemTime { tv_sec: 1739873456, tv_nsec: 131095989 } with previous_hash: 55d3b25a5ddc7f92678194cd10b2b80698adb2149a5f8a44918a67f60b169306 and hash: 2ed979831ddae10c7ca99eec57e96350bbfe1f252c0a8428f3c15d21967c3979
+✅ Block 14 added to the blockchain!
+⛏️ [Consensus] Block 15 produced at SystemTime { tv_sec: 1739873466, tv_nsec: 132612945 } with previous_hash: 2ed979831ddae10c7ca99eec57e96350bbfe1f252c0a8428f3c15d21967c3979 and hash: 8956ef993158ece04351fe1e506500ec1d1574003e2fdda53bc9f630760e609d
+✅ Block 15 added to the blockchain!
+⛏️ [Consensus] Block 16 produced at SystemTime { tv_sec: 1739873476, tv_nsec: 133430597 } with previous_hash: 8956ef993158ece04351fe1e506500ec1d1574003e2fdda53bc9f630760e609d and hash: 954dc787953618b5a7fc03037499b81cee61ba08acce2274a29af2106ccc6bdd
+✅ Block 16 added to the blockchain!
+⛏️ [Consensus] Block 17 produced at SystemTime { tv_sec: 1739873486, tv_nsec: 134530452 } with previous_hash: 954dc787953618b5a7fc03037499b81cee61ba08acce2274a29af2106ccc6bdd and hash: 65097c73fd042906bda101d79589940168046f632ca69446680734709094fc16
+✅ Block 17 added to the blockchain!
+⛏️ [Consensus] Block 18 produced at SystemTime { tv_sec: 1739873496, tv_nsec: 136152540 } with previous_hash: 65097c73fd042906bda101d79589940168046f632ca69446680734709094fc16 and hash: 67cbb1c17d50a62472199a2ebbd2fa7a0b04b63ee659e2823dac4df1e4b4050f
+✅ Block 18 added to the blockchain!
+⛏️ [Consensus] Block 19 produced at SystemTime { tv_sec: 1739873506, tv_nsec: 137966185 } with previous_hash: 67cbb1c17d50a62472199a2ebbd2fa7a0b04b63ee659e2823dac4df1e4b4050f and hash: f1c3d6c04c1bcd5943886a01a155aa5034601c42dc5585dc00dcc0513818681b
+✅ Block 19 added to the blockchain!
+⛏️ [Consensus] Block 20 produced at SystemTime { tv_sec: 1739873516, tv_nsec: 138983720 } with previous_hash: f1c3d6c04c1bcd5943886a01a155aa5034601c42dc5585dc00dcc0513818681b and hash: 60d80aad73605158c207000bb22575a50a132496d5c68a89a6f37b4dfb067847
+✅ Block 20 added to the blockchain!
+⛏️ [Consensus] Block 21 produced at SystemTime { tv_sec: 1739873526, tv_nsec: 140079347 } with previous_hash: 60d80aad73605158c207000bb22575a50a132496d5c68a89a6f37b4dfb067847 and hash: 1c64e06d41e7fec45b1fca206783bf3945107e903ad4957862264099ec95e02e
+✅ Block 21 added to the blockchain!
+⛏️ [Consensus] Block 22 produced at SystemTime { tv_sec: 1739873536, tv_nsec: 140651438 } with previous_hash: 1c64e06d41e7fec45b1fca206783bf3945107e903ad4957862264099ec95e02e and hash: efa3fbd41099f8241960096d32cab23346fcfada6050fa280d8a65b8a6cf5ed6
+✅ Block 22 added to the blockchain!
+⛏️ [Consensus] Block 23 produced at SystemTime { tv_sec: 1739873546, tv_nsec: 141544355 } with previous_hash: efa3fbd41099f8241960096d32cab23346fcfada6050fa280d8a65b8a6cf5ed6 and hash: b1daf382085bd6db6cfe0935af2bf48cbbdf8a33ff0d1eccd3b4b1940ed0ac29
+✅ Block 23 added to the blockchain!
+⛏️ [Consensus] Block 24 produced at SystemTime { tv_sec: 1739873556, tv_nsec: 142345624 } with previous_hash: b1daf382085bd6db6cfe0935af2bf48cbbdf8a33ff0d1eccd3b4b1940ed0ac29 and hash: 50dcfe4b44cd4253fbfd4909fcc5ee9209b6e2d4bb344b2a51bf04f89f248920
+✅ Block 24 added to the blockchain!
+⛏️ [Consensus] Block 25 produced at SystemTime { tv_sec: 1739873566, tv_nsec: 143386550 } with previous_hash: 50dcfe4b44cd4253fbfd4909fcc5ee9209b6e2d4bb344b2a51bf04f89f248920 and hash: dbf5ccb1a4173ef6e1f35990de8c06c3ced21ae1f10e19e027f470d3f087c5c4
+✅ Block 25 added to the blockchain!
+⛏️ [Consensus] Block 26 produced at SystemTime { tv_sec: 1739873576, tv_nsec: 144437443 } with previous_hash: dbf5ccb1a4173ef6e1f35990de8c06c3ced21ae1f10e19e027f470d3f087c5c4 and hash: cf6caacca5b5c5f4ab86090f2ab8713d8af715d0ba63d65f9c205c33fc95edfe
+✅ Block 26 added to the blockchain!
+⛏️ [Consensus] Block 27 produced at SystemTime { tv_sec: 1739873586, tv_nsec: 146158048 } with previous_hash: cf6caacca5b5c5f4ab86090f2ab8713d8af715d0ba63d65f9c205c33fc95edfe and hash: e183bc828f3a7957bba8d390095376b1cb0c7261257c28841b29610839832de1
+✅ Block 27 added to the blockchain!
+⛏️ [Consensus] Block 28 produced at SystemTime { tv_sec: 1739873596, tv_nsec: 147816036 } with previous_hash: e183bc828f3a7957bba8d390095376b1cb0c7261257c28841b29610839832de1 and hash: 3a10dc52c68ab8a2149914366a1cf035aa753c0a36fec3d7349b73ea80e7b4a4
+✅ Block 28 added to the blockchain!
+⛏️ [Consensus] Block 29 produced at SystemTime { tv_sec: 1739873606, tv_nsec: 148756040 } with previous_hash: 3a10dc52c68ab8a2149914366a1cf035aa753c0a36fec3d7349b73ea80e7b4a4 and hash: fecb82bc09818100997cdd4f1f4655b39c0741f175cef85ca735fe7f86737469
+✅ Block 29 added to the blockchain!
+⛏️ [Consensus] Block 30 produced at SystemTime { tv_sec: 1739873616, tv_nsec: 149764514 } with previous_hash: fecb82bc09818100997cdd4f1f4655b39c0741f175cef85ca735fe7f86737469 and hash: 0fcdc54a4737c9a5874c87e574e2ed934483a72102824ba3de609a097eab2f93
+✅ Block 30 added to the blockchain!

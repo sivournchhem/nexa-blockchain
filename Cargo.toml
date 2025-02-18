@@ -1,0 +1,17 @@
+[package]
+name = "nexa-blockchain"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+sha2 = "0.10"
+rand = "0.8"
+wasmer = "3.3.0"
+nix = "0.26"
+
+# The main binary will be compiled from src/main.rs by default.
+# The following section adds an additional binary called nexa-cli.
+[[bin]]
+name = "nexa-cli"
+path = "src/bin/nexa-cli.rs"
