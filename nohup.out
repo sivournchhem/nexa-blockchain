@@ -1,0 +1,6 @@
+🚀 Nexa Blockchain Started!
+🚀 Nexa TCP P2P Network is Listening on 0.0.0.0:30333
+Error: Os { code: 111, kind: ConnectionRefused, message: "Connection refused" }
+🚀 Nexa Blockchain Started!
+🚀 Nexa TCP P2P Network is Listening on 0.0.0.0:30333
+Error: Os { code: 110, kind: TimedOut, message: "Connection timed out" }

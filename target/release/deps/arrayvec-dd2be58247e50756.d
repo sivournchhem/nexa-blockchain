@@ -1,0 +1,13 @@
+/root/nexa-core/target/release/deps/libarrayvec-dd2be58247e50756.rmeta: /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/lib.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec_impl.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/array_string.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/char.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/errors.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/utils.rs
+
+/root/nexa-core/target/release/deps/libarrayvec-dd2be58247e50756.rlib: /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/lib.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec_impl.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/array_string.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/char.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/errors.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/utils.rs
+
+/root/nexa-core/target/release/deps/arrayvec-dd2be58247e50756.d: /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/lib.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec_impl.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/array_string.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/char.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/errors.rs /root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/utils.rs
+
+/root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/lib.rs:
+/root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec_impl.rs:
+/root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/arrayvec.rs:
+/root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/array_string.rs:
+/root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/char.rs:
+/root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/errors.rs:
+/root/.cargo/registry/src/index.crates.io-6f17d22bba15001f/arrayvec-0.7.6/src/utils.rs:
