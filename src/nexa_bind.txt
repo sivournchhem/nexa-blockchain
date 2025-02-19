@@ -1,0 +1,4 @@
+# Network Bind Configuration
+DEFAULT_BIND_IP = "0.0.0.0"
+ALLOW_EXTERNAL_CONNECTIONS = true
+MAX_CONNECTIONS = 125

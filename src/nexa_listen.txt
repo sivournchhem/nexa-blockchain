@@ -1,0 +1,4 @@
+# Listening Configuration
+LISTEN_ON_PORT = 8333
+ALLOW_INCOMING_CONNECTIONS = true
+ENABLE_IPV6_SUPPORT = false

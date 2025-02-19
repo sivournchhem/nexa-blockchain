@@ -1,0 +1,4 @@
+# Peer Management Rules
+MAX_PEER_AGE = 48  # hours
+PING_INTERVAL = 2  # seconds
+DISCONNECT_INACTIVE_PEERS = true

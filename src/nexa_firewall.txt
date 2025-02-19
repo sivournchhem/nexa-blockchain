@@ -1,0 +1,4 @@
+# Firewall and Security Rules
+ENFORCE_WHITELIST = true
+BLOCK_REPEATED_FAILED_ATTEMPTS = true
+PEER_BAN_THRESHOLD = 5
