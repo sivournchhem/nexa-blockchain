@@ -2,16 +2,23 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <memory>  // For smart pointers
 #include "transaction.h"
 
 class Mempool {
 private:
-    std::unordered_map<std::string, Transaction> pool;
+    std::unordered_map<std::string, std::shared_ptr<Transaction>> pool;
 
 public:
-    void addTransaction(const Transaction& tx) {
-        pool[tx.txid] = tx;
-        std::cout << "[Mempool] Transaction " << tx.txid << " added." << std::endl;
+    // Destructor to clean up memory
+    ~Mempool() {
+        pool.clear();
+        std::cout << "[Mempool] Cleared all transactions." << std::endl;
+    }
+
+    void addTransaction(const std::shared_ptr<Transaction>& tx) {
+        pool[tx->txid] = tx;
+        std::cout << "[Mempool] Transaction " << tx->txid << " added." << std::endl;
     }
 
     void removeTransaction(const std::string& txid) {
@@ -25,12 +32,11 @@ public:
 
     void prioritizeTransactions() {
         // Sort transactions based on fee per byte
-        std::vector<Transaction> sortedTxs;
-        for (const auto& pair : pool) {
-            sortedTxs.push_back(pair.second);
-        }
-        std::sort(sortedTxs.begin(), sortedTxs.end(), [](const Transaction& a, const Transaction& b) {
-            return (a.fee / a.size) > (b.fee / b.size);
+        std::vector<std::shared_ptr<Transaction>> sortedTxs;
+	std::transform(pool.begin(), pool.end(), std::back_inserter(sortedTxs),
+    	[](const auto& pair) { return pair.second; });
+        std::sort(sortedTxs.begin(), sortedTxs.end(), [](const std::shared_ptr<Transaction>& a, const std::shared_ptr<Transaction>& b) {
+            return (a->fee / a->size) > (b->fee / b->size);
         });
 
         std::cout << "[Mempool] Transactions sorted by priority." << std::endl;
