@@ -100,11 +100,13 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am_nexa_cli_OBJECTS = rpc/nexa-cli.$(OBJEXT)
+am_nexa_cli_OBJECTS = src/rpc/nexa-cli.$(OBJEXT)
 nexa_cli_OBJECTS = $(am_nexa_cli_OBJECTS)
 nexa_cli_LDADD = $(LDADD)
-am_nexad_OBJECTS = nexad.$(OBJEXT) network/network.$(OBJEXT) \
-	consensus/consensus.$(OBJEXT) mempool/mempool.$(OBJEXT)
+am_nexad_OBJECTS = src/nexad.$(OBJEXT) src/network/network.$(OBJEXT) \
+	src/consensus/consensus.$(OBJEXT) \
+	src/mempool/mempool.$(OBJEXT) \
+	src/governance/governance.$(OBJEXT)
 nexad_OBJECTS = $(am_nexad_OBJECTS)
 nexad_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -122,9 +124,11 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/nexad.Po \
-	consensus/$(DEPDIR)/consensus.Po mempool/$(DEPDIR)/mempool.Po \
-	network/$(DEPDIR)/network.Po rpc/$(DEPDIR)/nexa-cli.Po
+am__depfiles_remade = src/$(DEPDIR)/nexad.Po \
+	src/consensus/$(DEPDIR)/consensus.Po \
+	src/governance/$(DEPDIR)/governance.Po \
+	src/mempool/$(DEPDIR)/mempool.Po \
+	src/network/$(DEPDIR)/network.Po src/rpc/$(DEPDIR)/nexa-cli.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -258,8 +262,16 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign subdir-objects
-nexad_SOURCES = nexad.cpp network/network.cpp consensus/consensus.cpp mempool/mempool.cpp
-nexa_cli_SOURCES = rpc/nexa-cli.cpp
+nexad_SOURCES = \
+    src/nexad.cpp \
+    src/network/network.cpp \
+    src/consensus/consensus.cpp \
+    src/mempool/mempool.cpp \
+    src/governance/governance.cpp
+
+nexa_cli_SOURCES = \
+    src/rpc/nexa-cli.cpp
+
 all: all-am
 
 .SUFFIXES:
@@ -335,42 +347,57 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
-rpc/$(am__dirstamp):
-	@$(MKDIR_P) rpc
-	@: > rpc/$(am__dirstamp)
-rpc/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) rpc/$(DEPDIR)
-	@: > rpc/$(DEPDIR)/$(am__dirstamp)
-rpc/nexa-cli.$(OBJEXT): rpc/$(am__dirstamp) \
-	rpc/$(DEPDIR)/$(am__dirstamp)
+src/rpc/$(am__dirstamp):
+	@$(MKDIR_P) src/rpc
+	@: > src/rpc/$(am__dirstamp)
+src/rpc/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/rpc/$(DEPDIR)
+	@: > src/rpc/$(DEPDIR)/$(am__dirstamp)
+src/rpc/nexa-cli.$(OBJEXT): src/rpc/$(am__dirstamp) \
+	src/rpc/$(DEPDIR)/$(am__dirstamp)
 
 nexa-cli$(EXEEXT): $(nexa_cli_OBJECTS) $(nexa_cli_DEPENDENCIES) $(EXTRA_nexa_cli_DEPENDENCIES) 
 	@rm -f nexa-cli$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(nexa_cli_OBJECTS) $(nexa_cli_LDADD) $(LIBS)
-network/$(am__dirstamp):
-	@$(MKDIR_P) network
-	@: > network/$(am__dirstamp)
-network/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) network/$(DEPDIR)
-	@: > network/$(DEPDIR)/$(am__dirstamp)
-network/network.$(OBJEXT): network/$(am__dirstamp) \
-	network/$(DEPDIR)/$(am__dirstamp)
-consensus/$(am__dirstamp):
-	@$(MKDIR_P) consensus
-	@: > consensus/$(am__dirstamp)
-consensus/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) consensus/$(DEPDIR)
-	@: > consensus/$(DEPDIR)/$(am__dirstamp)
-consensus/consensus.$(OBJEXT): consensus/$(am__dirstamp) \
-	consensus/$(DEPDIR)/$(am__dirstamp)
-mempool/$(am__dirstamp):
-	@$(MKDIR_P) mempool
-	@: > mempool/$(am__dirstamp)
-mempool/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) mempool/$(DEPDIR)
-	@: > mempool/$(DEPDIR)/$(am__dirstamp)
-mempool/mempool.$(OBJEXT): mempool/$(am__dirstamp) \
-	mempool/$(DEPDIR)/$(am__dirstamp)
+src/$(am__dirstamp):
+	@$(MKDIR_P) src
+	@: > src/$(am__dirstamp)
+src/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/$(DEPDIR)
+	@: > src/$(DEPDIR)/$(am__dirstamp)
+src/nexad.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/network/$(am__dirstamp):
+	@$(MKDIR_P) src/network
+	@: > src/network/$(am__dirstamp)
+src/network/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/network/$(DEPDIR)
+	@: > src/network/$(DEPDIR)/$(am__dirstamp)
+src/network/network.$(OBJEXT): src/network/$(am__dirstamp) \
+	src/network/$(DEPDIR)/$(am__dirstamp)
+src/consensus/$(am__dirstamp):
+	@$(MKDIR_P) src/consensus
+	@: > src/consensus/$(am__dirstamp)
+src/consensus/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/consensus/$(DEPDIR)
+	@: > src/consensus/$(DEPDIR)/$(am__dirstamp)
+src/consensus/consensus.$(OBJEXT): src/consensus/$(am__dirstamp) \
+	src/consensus/$(DEPDIR)/$(am__dirstamp)
+src/mempool/$(am__dirstamp):
+	@$(MKDIR_P) src/mempool
+	@: > src/mempool/$(am__dirstamp)
+src/mempool/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/mempool/$(DEPDIR)
+	@: > src/mempool/$(DEPDIR)/$(am__dirstamp)
+src/mempool/mempool.$(OBJEXT): src/mempool/$(am__dirstamp) \
+	src/mempool/$(DEPDIR)/$(am__dirstamp)
+src/governance/$(am__dirstamp):
+	@$(MKDIR_P) src/governance
+	@: > src/governance/$(am__dirstamp)
+src/governance/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/governance/$(DEPDIR)
+	@: > src/governance/$(DEPDIR)/$(am__dirstamp)
+src/governance/governance.$(OBJEXT): src/governance/$(am__dirstamp) \
+	src/governance/$(DEPDIR)/$(am__dirstamp)
 
 nexad$(EXEEXT): $(nexad_OBJECTS) $(nexad_DEPENDENCIES) $(EXTRA_nexad_DEPENDENCIES) 
 	@rm -f nexad$(EXEEXT)
@@ -378,19 +405,22 @@ nexad$(EXEEXT): $(nexad_OBJECTS) $(nexad_DEPENDENCIES) $(EXTRA_nexad_DEPENDENCIE
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
-	-rm -f consensus/*.$(OBJEXT)
-	-rm -f mempool/*.$(OBJEXT)
-	-rm -f network/*.$(OBJEXT)
-	-rm -f rpc/*.$(OBJEXT)
+	-rm -f src/*.$(OBJEXT)
+	-rm -f src/consensus/*.$(OBJEXT)
+	-rm -f src/governance/*.$(OBJEXT)
+	-rm -f src/mempool/*.$(OBJEXT)
+	-rm -f src/network/*.$(OBJEXT)
+	-rm -f src/rpc/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nexad.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@consensus/$(DEPDIR)/consensus.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@mempool/$(DEPDIR)/mempool.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@network/$(DEPDIR)/network.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/nexa-cli.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/nexad.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/consensus/$(DEPDIR)/consensus.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/governance/$(DEPDIR)/governance.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/mempool/$(DEPDIR)/mempool.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/network/$(DEPDIR)/network.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/rpc/$(DEPDIR)/nexa-cli.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -531,14 +561,18 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
-	-rm -f consensus/$(DEPDIR)/$(am__dirstamp)
-	-rm -f consensus/$(am__dirstamp)
-	-rm -f mempool/$(DEPDIR)/$(am__dirstamp)
-	-rm -f mempool/$(am__dirstamp)
-	-rm -f network/$(DEPDIR)/$(am__dirstamp)
-	-rm -f network/$(am__dirstamp)
-	-rm -f rpc/$(DEPDIR)/$(am__dirstamp)
-	-rm -f rpc/$(am__dirstamp)
+	-rm -f src/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/$(am__dirstamp)
+	-rm -f src/consensus/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/consensus/$(am__dirstamp)
+	-rm -f src/governance/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/governance/$(am__dirstamp)
+	-rm -f src/mempool/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/mempool/$(am__dirstamp)
+	-rm -f src/network/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/network/$(am__dirstamp)
+	-rm -f src/rpc/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/rpc/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -548,11 +582,12 @@ clean: clean-am
 clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/nexad.Po
-	-rm -f consensus/$(DEPDIR)/consensus.Po
-	-rm -f mempool/$(DEPDIR)/mempool.Po
-	-rm -f network/$(DEPDIR)/network.Po
-	-rm -f rpc/$(DEPDIR)/nexa-cli.Po
+		-rm -f src/$(DEPDIR)/nexad.Po
+	-rm -f src/consensus/$(DEPDIR)/consensus.Po
+	-rm -f src/governance/$(DEPDIR)/governance.Po
+	-rm -f src/mempool/$(DEPDIR)/mempool.Po
+	-rm -f src/network/$(DEPDIR)/network.Po
+	-rm -f src/rpc/$(DEPDIR)/nexa-cli.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -598,11 +633,12 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/nexad.Po
-	-rm -f consensus/$(DEPDIR)/consensus.Po
-	-rm -f mempool/$(DEPDIR)/mempool.Po
-	-rm -f network/$(DEPDIR)/network.Po
-	-rm -f rpc/$(DEPDIR)/nexa-cli.Po
+		-rm -f src/$(DEPDIR)/nexad.Po
+	-rm -f src/consensus/$(DEPDIR)/consensus.Po
+	-rm -f src/governance/$(DEPDIR)/governance.Po
+	-rm -f src/mempool/$(DEPDIR)/mempool.Po
+	-rm -f src/network/$(DEPDIR)/network.Po
+	-rm -f src/rpc/$(DEPDIR)/nexa-cli.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

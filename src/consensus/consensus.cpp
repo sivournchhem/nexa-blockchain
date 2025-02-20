@@ -1,18 +1,15 @@
 #include <iostream>
-#include <stdexcept>
+#include "../mempool/mempool.h"
 
-// Define total fixed supply
-const uint64_t TOTAL_SUPPLY = 23000000ULL * 100000000ULL;
-
-// Function to return max supply
-uint64_t getMaxSupply() {
-    return TOTAL_SUPPLY;
-}
-
-// Prevent minting beyond 23M NXA
-bool validateSupply(uint64_t currentSupply) {
-    if (currentSupply >= TOTAL_SUPPLY) {
-        throw std::runtime_error("Error: Supply limit of 23,000,000 NXA reached. No additional coins can be minted.");
+// Validate transaction before adding to the mempool
+bool validateTransaction(const Transaction& tx) {
+    if (tx.fee <= 0) {
+        std::cerr << "Invalid transaction: Fee must be greater than zero." << std::endl;
+        return false;
+    }
+    if (tx.size > 1000000) { // Limit transaction size
+        std::cerr << "Invalid transaction: Size exceeds 1MB limit." << std::endl;
+        return false;
     }
     return true;
 }

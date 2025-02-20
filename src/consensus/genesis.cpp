@@ -7,7 +7,7 @@ struct GenesisBlock {
 };
 
 // Define total supply
-const uint64_t TOTAL_SUPPLY = 23000000 * 100000000; // 23M NXA in smallest units
+const uint64_t TOTAL_SUPPLY = 23000000ULL * 100000000ULL;
 
 // Function to generate the Genesis Block
 GenesisBlock createGenesisBlock() {

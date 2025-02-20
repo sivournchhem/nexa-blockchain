@@ -1,11 +1,8 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-
-struct Transaction {
-    std::string txid;
-    double fee;
-};
+#include "transaction.h"
 
 class Mempool {
 private:
@@ -18,21 +15,25 @@ public:
     }
 
     void removeTransaction(const std::string& txid) {
-        if (pool.find(txid) != pool.end()) {
-            pool.erase(txid);
-            std::cout << "[Mempool] Transaction " << txid << " removed." << std::endl;
-        }
+        pool.erase(txid);
+        std::cout << "[Mempool] Transaction " << txid << " removed." << std::endl;
     }
 
-    size_t getMempoolSize() {
+    size_t getMempoolSize() const {
         return pool.size();
     }
 
-    void printMempool() {
-        std::cout << "[Mempool] Current transactions: " << std::endl;
+    void prioritizeTransactions() {
+        // Sort transactions based on fee per byte
+        std::vector<Transaction> sortedTxs;
         for (const auto& pair : pool) {
-            std::cout << " - " << pair.first << " (Fee: " << pair.second.fee << ")" << std::endl;
+            sortedTxs.push_back(pair.second);
         }
+        std::sort(sortedTxs.begin(), sortedTxs.end(), [](const Transaction& a, const Transaction& b) {
+            return (a.fee / a.size) > (b.fee / b.size);
+        });
+
+        std::cout << "[Mempool] Transactions sorted by priority." << std::endl;
     }
 };
 
