@@ -104,7 +104,7 @@ am_nexa_cli_OBJECTS = rpc/nexa-cli.$(OBJEXT)
 nexa_cli_OBJECTS = $(am_nexa_cli_OBJECTS)
 nexa_cli_LDADD = $(LDADD)
 am_nexad_OBJECTS = nexad.$(OBJEXT) network/network.$(OBJEXT) \
-	consensus/consensus.$(OBJEXT)
+	consensus/consensus.$(OBJEXT) mempool/mempool.$(OBJEXT)
 nexad_OBJECTS = $(am_nexad_OBJECTS)
 nexad_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_$(V))
@@ -123,8 +123,8 @@ DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/nexad.Po \
-	consensus/$(DEPDIR)/consensus.Po network/$(DEPDIR)/network.Po \
-	rpc/$(DEPDIR)/nexa-cli.Po
+	consensus/$(DEPDIR)/consensus.Po mempool/$(DEPDIR)/mempool.Po \
+	network/$(DEPDIR)/network.Po rpc/$(DEPDIR)/nexa-cli.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -258,7 +258,7 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 AUTOMAKE_OPTIONS = foreign subdir-objects
-nexad_SOURCES = nexad.cpp network/network.cpp consensus/consensus.cpp
+nexad_SOURCES = nexad.cpp network/network.cpp consensus/consensus.cpp mempool/mempool.cpp
 nexa_cli_SOURCES = rpc/nexa-cli.cpp
 all: all-am
 
@@ -363,6 +363,14 @@ consensus/$(DEPDIR)/$(am__dirstamp):
 	@: > consensus/$(DEPDIR)/$(am__dirstamp)
 consensus/consensus.$(OBJEXT): consensus/$(am__dirstamp) \
 	consensus/$(DEPDIR)/$(am__dirstamp)
+mempool/$(am__dirstamp):
+	@$(MKDIR_P) mempool
+	@: > mempool/$(am__dirstamp)
+mempool/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) mempool/$(DEPDIR)
+	@: > mempool/$(DEPDIR)/$(am__dirstamp)
+mempool/mempool.$(OBJEXT): mempool/$(am__dirstamp) \
+	mempool/$(DEPDIR)/$(am__dirstamp)
 
 nexad$(EXEEXT): $(nexad_OBJECTS) $(nexad_DEPENDENCIES) $(EXTRA_nexad_DEPENDENCIES) 
 	@rm -f nexad$(EXEEXT)
@@ -371,6 +379,7 @@ nexad$(EXEEXT): $(nexad_OBJECTS) $(nexad_DEPENDENCIES) $(EXTRA_nexad_DEPENDENCIE
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
 	-rm -f consensus/*.$(OBJEXT)
+	-rm -f mempool/*.$(OBJEXT)
 	-rm -f network/*.$(OBJEXT)
 	-rm -f rpc/*.$(OBJEXT)
 
@@ -379,6 +388,7 @@ distclean-compile:
 
 include ./$(DEPDIR)/nexad.Po # am--include-marker
 include consensus/$(DEPDIR)/consensus.Po # am--include-marker
+include mempool/$(DEPDIR)/mempool.Po # am--include-marker
 include network/$(DEPDIR)/network.Po # am--include-marker
 include rpc/$(DEPDIR)/nexa-cli.Po # am--include-marker
 
@@ -523,6 +533,8 @@ distclean-generic:
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
 	-rm -f consensus/$(DEPDIR)/$(am__dirstamp)
 	-rm -f consensus/$(am__dirstamp)
+	-rm -f mempool/$(DEPDIR)/$(am__dirstamp)
+	-rm -f mempool/$(am__dirstamp)
 	-rm -f network/$(DEPDIR)/$(am__dirstamp)
 	-rm -f network/$(am__dirstamp)
 	-rm -f rpc/$(DEPDIR)/$(am__dirstamp)
@@ -538,6 +550,7 @@ clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 distclean: distclean-am
 		-rm -f ./$(DEPDIR)/nexad.Po
 	-rm -f consensus/$(DEPDIR)/consensus.Po
+	-rm -f mempool/$(DEPDIR)/mempool.Po
 	-rm -f network/$(DEPDIR)/network.Po
 	-rm -f rpc/$(DEPDIR)/nexa-cli.Po
 	-rm -f Makefile
@@ -587,6 +600,7 @@ installcheck-am:
 maintainer-clean: maintainer-clean-am
 		-rm -f ./$(DEPDIR)/nexad.Po
 	-rm -f consensus/$(DEPDIR)/consensus.Po
+	-rm -f mempool/$(DEPDIR)/mempool.Po
 	-rm -f network/$(DEPDIR)/network.Po
 	-rm -f rpc/$(DEPDIR)/nexa-cli.Po
 	-rm -f Makefile

@@ -1,5 +1,5 @@
 #include <iostream>
 
 void consensusInit() {
-    std::cout << "Consensus module initialized!" << std::endl;
+    std::cout << "[Consensus] Module initialized successfully." << std::endl;
 }
