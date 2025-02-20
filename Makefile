@@ -242,7 +242,7 @@ CSCOPE = cscope
 CTAGS = ctags
 CXX = g++
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -O3 -march=native -mtune=native
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps

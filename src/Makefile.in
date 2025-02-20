@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = nexad$(EXEEXT)
+bin_PROGRAMS = nexad$(EXEEXT) nexa-cli$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -100,7 +100,10 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am_nexad_OBJECTS = main.$(OBJEXT) network/network.$(OBJEXT) \
+am_nexa_cli_OBJECTS = rpc/nexa-cli.$(OBJEXT)
+nexa_cli_OBJECTS = $(am_nexa_cli_OBJECTS)
+nexa_cli_LDADD = $(LDADD)
+am_nexad_OBJECTS = nexad.$(OBJEXT) network/network.$(OBJEXT) \
 	consensus/consensus.$(OBJEXT)
 nexad_OBJECTS = $(am_nexad_OBJECTS)
 nexad_LDADD = $(LDADD)
@@ -119,8 +122,9 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/main.Po \
-	consensus/$(DEPDIR)/consensus.Po network/$(DEPDIR)/network.Po
+am__depfiles_remade = ./$(DEPDIR)/nexad.Po \
+	consensus/$(DEPDIR)/consensus.Po network/$(DEPDIR)/network.Po \
+	rpc/$(DEPDIR)/nexa-cli.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -135,8 +139,8 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(nexad_SOURCES)
-DIST_SOURCES = $(nexad_SOURCES)
+SOURCES = $(nexa_cli_SOURCES) $(nexad_SOURCES)
+DIST_SOURCES = $(nexa_cli_SOURCES) $(nexad_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -254,7 +258,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign subdir-objects
-nexad_SOURCES = main.cpp network/network.cpp consensus/consensus.cpp
+nexad_SOURCES = nexad.cpp network/network.cpp consensus/consensus.cpp
+nexa_cli_SOURCES = rpc/nexa-cli.cpp
 all: all-am
 
 .SUFFIXES:
@@ -330,6 +335,18 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+rpc/$(am__dirstamp):
+	@$(MKDIR_P) rpc
+	@: > rpc/$(am__dirstamp)
+rpc/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) rpc/$(DEPDIR)
+	@: > rpc/$(DEPDIR)/$(am__dirstamp)
+rpc/nexa-cli.$(OBJEXT): rpc/$(am__dirstamp) \
+	rpc/$(DEPDIR)/$(am__dirstamp)
+
+nexa-cli$(EXEEXT): $(nexa_cli_OBJECTS) $(nexa_cli_DEPENDENCIES) $(EXTRA_nexa_cli_DEPENDENCIES) 
+	@rm -f nexa-cli$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(nexa_cli_OBJECTS) $(nexa_cli_LDADD) $(LIBS)
 network/$(am__dirstamp):
 	@$(MKDIR_P) network
 	@: > network/$(am__dirstamp)
@@ -355,13 +372,15 @@ mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
 	-rm -f consensus/*.$(OBJEXT)
 	-rm -f network/*.$(OBJEXT)
+	-rm -f rpc/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nexad.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@consensus/$(DEPDIR)/consensus.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@network/$(DEPDIR)/network.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/nexa-cli.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -506,6 +525,8 @@ distclean-generic:
 	-rm -f consensus/$(am__dirstamp)
 	-rm -f network/$(DEPDIR)/$(am__dirstamp)
 	-rm -f network/$(am__dirstamp)
+	-rm -f rpc/$(DEPDIR)/$(am__dirstamp)
+	-rm -f rpc/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -515,9 +536,10 @@ clean: clean-am
 clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/main.Po
+		-rm -f ./$(DEPDIR)/nexad.Po
 	-rm -f consensus/$(DEPDIR)/consensus.Po
 	-rm -f network/$(DEPDIR)/network.Po
+	-rm -f rpc/$(DEPDIR)/nexa-cli.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -563,9 +585,10 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/main.Po
+		-rm -f ./$(DEPDIR)/nexad.Po
 	-rm -f consensus/$(DEPDIR)/consensus.Po
 	-rm -f network/$(DEPDIR)/network.Po
+	-rm -f rpc/$(DEPDIR)/nexa-cli.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
