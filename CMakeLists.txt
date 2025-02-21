@@ -11,6 +11,7 @@ set(SOURCES
     src/consensus/consensus.cpp
     src/mempool/mempool.cpp
     src/governance/governance.cpp
+    src/api/exchange_api.cpp
 )
 
 # Create executable
