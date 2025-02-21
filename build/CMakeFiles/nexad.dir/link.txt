@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/nexad.dir/src/main.cpp.o CMakeFiles/nexad.dir/src/network/network.cpp.o CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o CMakeFiles/nexad.dir/src/governance/governance.cpp.o -o nexad 
+/usr/bin/c++ CMakeFiles/nexad.dir/src/main.cpp.o CMakeFiles/nexad.dir/src/network/network.cpp.o CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o CMakeFiles/nexad.dir/src/governance/governance.cpp.o CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o -o nexad 

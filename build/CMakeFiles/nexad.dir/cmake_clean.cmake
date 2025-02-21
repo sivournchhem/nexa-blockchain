@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o"
+  "CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o.d"
   "CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o"
   "CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o.d"
   "CMakeFiles/nexad.dir/src/governance/governance.cpp.o"

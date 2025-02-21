@@ -129,6 +129,30 @@ nexad/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nexad.dir/build.make CMakeFiles/nexad.dir/build
 .PHONY : nexad/fast
 
+src/api/exchange_api.o: src/api/exchange_api.cpp.o
+.PHONY : src/api/exchange_api.o
+
+# target to build an object file
+src/api/exchange_api.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nexad.dir/build.make CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o
+.PHONY : src/api/exchange_api.cpp.o
+
+src/api/exchange_api.i: src/api/exchange_api.cpp.i
+.PHONY : src/api/exchange_api.i
+
+# target to preprocess a source file
+src/api/exchange_api.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nexad.dir/build.make CMakeFiles/nexad.dir/src/api/exchange_api.cpp.i
+.PHONY : src/api/exchange_api.cpp.i
+
+src/api/exchange_api.s: src/api/exchange_api.cpp.s
+.PHONY : src/api/exchange_api.s
+
+# target to generate assembly for a file
+src/api/exchange_api.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nexad.dir/build.make CMakeFiles/nexad.dir/src/api/exchange_api.cpp.s
+.PHONY : src/api/exchange_api.cpp.s
+
 src/consensus/consensus.o: src/consensus/consensus.cpp.o
 .PHONY : src/consensus/consensus.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... nexad"
+	@echo "... src/api/exchange_api.o"
+	@echo "... src/api/exchange_api.i"
+	@echo "... src/api/exchange_api.s"
 	@echo "... src/consensus/consensus.o"
 	@echo "... src/consensus/consensus.i"
 	@echo "... src/consensus/consensus.s"
