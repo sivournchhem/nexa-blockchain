@@ -1,26 +1,19 @@
 #include "governance.h"
 #include <iostream>
-#include <unordered_map>
 
-void Governance::createProposal(const std::string& proposalID) {
-    proposals[proposalID] = 0;
-    std::cout << "[DAO] Proposal Created: " << proposalID << std::endl;
+// Creates a new governance proposal
+void Governance::createProposal(const std::string& proposal) {
+    std::cout << "[Governance] New Proposal Created: " << proposal << std::endl;
 }
 
-void Governance::voteOnProposal(const std::string& proposalID, int vote) {
-    if (proposals.find(proposalID) != proposals.end()) {
-        proposals[proposalID] += vote;
-        std::cout << "[DAO] Vote Casted: " << vote << " for " << proposalID << std::endl;
-    } else {
-        std::cerr << "[DAO] Proposal Not Found: " << proposalID << std::endl;
-    }
+// Casts a vote on a proposal (1 = Yes, 0 = No)
+void Governance::voteOnProposal(const std::string& proposal, int vote) {
+    std::string voteStr = (vote == 1) ? "YES" : "NO";
+    std::cout << "[Governance] Vote on Proposal '" << proposal << "': " << voteStr << std::endl;
 }
 
-int Governance::getProposalVotes(const std::string& proposalID) {
-    if (proposals.find(proposalID) != proposals.end()) {
-        return proposals[proposalID];
-    } else {
-        std::cerr << "[DAO] Proposal Not Found: " << proposalID << std::endl;
-        return -1;
-    }
+// Retrieves the total votes for a proposal
+int Governance::getProposalVotes(const std::string& proposal) {
+    std::cout << "[Governance] Retrieving vote count for Proposal: " << proposal << std::endl;
+    return 0; // Placeholder return value
 }

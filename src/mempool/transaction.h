@@ -1,16 +1,24 @@
-#ifndef TRANSACTION_H
-#define TRANSACTION_H
+#ifndef MEMPOOL_TRANSACTION_H
+#define MEMPOOL_TRANSACTION_H
 
+#include <vector>
+#include <cstdint>
 #include <string>
 
 class Transaction {
 public:
-    std::string txid;
-    double fee;
-    uint64_t size;
+    uint32_t version;
+    std::vector<uint8_t> inputs;
+    std::vector<uint8_t> outputs;
+    uint32_t locktime;
+    uint64_t fee;     // Added missing fee
+    uint32_t size;    // Added missing size
+    std::string txid; // Added missing txid
 
-    Transaction() : txid(""), fee(0.0), size(0) {} // Default Constructor
-    Transaction(const std::string& id, double f, uint64_t s) : txid(id), fee(f), size(s) {}
+    Transaction() : version(1), locktime(0), fee(0), size(0), txid("") {}
+
+    void Serialize();
+    void Deserialize();
 };
 
-#endif // TRANSACTION_H
+#endif // MEMPOOL_TRANSACTION_H

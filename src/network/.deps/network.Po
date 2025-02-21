@@ -1,5 +1,5 @@
-src/network/network.o: src/network/network.cpp /usr/include/stdc-predef.h \
- src/network/network.h /usr/include/c++/11/string \
+network/network.o: network/network.cpp /usr/include/stdc-predef.h \
+ network/network.h /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -155,9 +155,17 @@ src/network/network.o: src/network/network.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc
+ /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/mutex \
+ /usr/include/c++/11/tuple /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/array \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/limits \
+ /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h
 /usr/include/stdc-predef.h:
-src/network/network.h:
+network/network.h:
 /usr/include/c++/11/string:
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
@@ -347,3 +355,17 @@ src/network/network.h:
 /usr/include/c++/11/bits/ostream.tcc:
 /usr/include/c++/11/istream:
 /usr/include/c++/11/bits/istream.tcc:
+/usr/include/c++/11/mutex:
+/usr/include/c++/11/tuple:
+/usr/include/c++/11/utility:
+/usr/include/c++/11/bits/stl_relops.h:
+/usr/include/c++/11/array:
+/usr/include/c++/11/bits/uses_allocator.h:
+/usr/include/c++/11/bits/invoke.h:
+/usr/include/c++/11/chrono:
+/usr/include/c++/11/ratio:
+/usr/include/c++/11/limits:
+/usr/include/c++/11/ctime:
+/usr/include/c++/11/bits/parse_numbers.h:
+/usr/include/c++/11/bits/std_mutex.h:
+/usr/include/c++/11/bits/unique_lock.h:

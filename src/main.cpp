@@ -1,13 +1,15 @@
-#include "governance/governance.h"
 #include <iostream>
+#include "network/network.h"
+#include "consensus/consensus.h"
+#include "governance/governance.h"
 
 int main() {
-    Governance dao;
-    dao.createProposal("increase_block_size");
-    dao.voteOnProposal("increase_block_size", 1);
+    std::cout << "[Nexa Core] Starting node..." << std::endl;
 
-    std::cout << "[Nexa Core] Governance Initialized - Votes: " 
-              << dao.getProposalVotes("increase_block_size") << std::endl;
+    // Governance test
+    Governance::createProposal("Increase block size");
+    Governance::voteOnProposal("Increase block size", 1);
+    Governance::getProposalVotes("Increase block size");
 
     return 0;
 }

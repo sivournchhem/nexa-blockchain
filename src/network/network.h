@@ -5,9 +5,6 @@
 #include <vector>
 
 class PeerManager {
-private:
-    std::vector<std::string> peers;
-
 public:
     void addPeer(const std::string& peerIP);
     std::vector<std::string> getPeers() const;
