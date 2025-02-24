@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/root/nexa-core/src
+CXX_INCLUDES = -I/usr/local/src/nexa-core/src
 
 CXX_FLAGS = 
 

@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/nexa-core
+CMAKE_SOURCE_DIR = /usr/local/src/nexa-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/nexa-core/build
+CMAKE_BINARY_DIR = /usr/local/src/nexa-core/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/nexad.dir/clean
 CMakeFiles/nexad.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nexad.dir/build.make CMakeFiles/nexad.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nexad.dir/build.make CMakeFiles/nexad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target nexad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target nexad"
 .PHONY : CMakeFiles/nexad.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/nexad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/nexa-core/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /usr/local/src/nexa-core/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nexad.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/nexa-core/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /usr/local/src/nexa-core/build/CMakeFiles 0
 .PHONY : CMakeFiles/nexad.dir/rule
 
 # Convenience name for target.

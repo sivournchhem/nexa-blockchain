@@ -1,5 +1,6 @@
-CMakeFiles/nexad.dir/src/main.cpp.o: /root/nexa-core/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
+CMakeFiles/nexad.dir/src/main.cpp.o: \
+ /usr/local/src/nexa-core/src/main.cpp /usr/include/stdc-predef.h \
+ /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -145,11 +146,11 @@ CMakeFiles/nexad.dir/src/main.cpp.o: /root/nexa-core/src/main.cpp \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /root/nexa-core/src/network/network.h /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/local/src/nexa-core/src/network/network.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /root/nexa-core/src/consensus/consensus.h \
- /root/nexa-core/src/consensus/../mempool/transaction.h \
- /root/nexa-core/src/governance/governance.h
+ /usr/local/src/nexa-core/src/consensus/consensus.h \
+ /usr/local/src/nexa-core/src/consensus/../mempool/transaction.h \
+ /usr/local/src/nexa-core/src/governance/governance.h

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/nexa-core
+CMAKE_SOURCE_DIR = /usr/local/src/nexa-core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/nexa-core/build
+CMAKE_BINARY_DIR = /usr/local/src/nexa-core/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/nexad.dir/depend.make
@@ -72,86 +72,86 @@ include CMakeFiles/nexad.dir/flags.make
 CMakeFiles/nexad.dir/src/main.cpp.o: CMakeFiles/nexad.dir/flags.make
 CMakeFiles/nexad.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/nexad.dir/src/main.cpp.o: CMakeFiles/nexad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/nexad.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/main.cpp.o -MF CMakeFiles/nexad.dir/src/main.cpp.o.d -o CMakeFiles/nexad.dir/src/main.cpp.o -c /root/nexa-core/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/nexad.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/main.cpp.o -MF CMakeFiles/nexad.dir/src/main.cpp.o.d -o CMakeFiles/nexad.dir/src/main.cpp.o -c /usr/local/src/nexa-core/src/main.cpp
 
 CMakeFiles/nexad.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nexad.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/nexa-core/src/main.cpp > CMakeFiles/nexad.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/src/nexa-core/src/main.cpp > CMakeFiles/nexad.dir/src/main.cpp.i
 
 CMakeFiles/nexad.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nexad.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/nexa-core/src/main.cpp -o CMakeFiles/nexad.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/src/nexa-core/src/main.cpp -o CMakeFiles/nexad.dir/src/main.cpp.s
 
 CMakeFiles/nexad.dir/src/network/network.cpp.o: CMakeFiles/nexad.dir/flags.make
 CMakeFiles/nexad.dir/src/network/network.cpp.o: ../src/network/network.cpp
 CMakeFiles/nexad.dir/src/network/network.cpp.o: CMakeFiles/nexad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/nexad.dir/src/network/network.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/network/network.cpp.o -MF CMakeFiles/nexad.dir/src/network/network.cpp.o.d -o CMakeFiles/nexad.dir/src/network/network.cpp.o -c /root/nexa-core/src/network/network.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/nexad.dir/src/network/network.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/network/network.cpp.o -MF CMakeFiles/nexad.dir/src/network/network.cpp.o.d -o CMakeFiles/nexad.dir/src/network/network.cpp.o -c /usr/local/src/nexa-core/src/network/network.cpp
 
 CMakeFiles/nexad.dir/src/network/network.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nexad.dir/src/network/network.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/nexa-core/src/network/network.cpp > CMakeFiles/nexad.dir/src/network/network.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/src/nexa-core/src/network/network.cpp > CMakeFiles/nexad.dir/src/network/network.cpp.i
 
 CMakeFiles/nexad.dir/src/network/network.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nexad.dir/src/network/network.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/nexa-core/src/network/network.cpp -o CMakeFiles/nexad.dir/src/network/network.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/src/nexa-core/src/network/network.cpp -o CMakeFiles/nexad.dir/src/network/network.cpp.s
 
 CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o: CMakeFiles/nexad.dir/flags.make
 CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o: ../src/consensus/consensus.cpp
 CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o: CMakeFiles/nexad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o -MF CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o.d -o CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o -c /root/nexa-core/src/consensus/consensus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o -MF CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o.d -o CMakeFiles/nexad.dir/src/consensus/consensus.cpp.o -c /usr/local/src/nexa-core/src/consensus/consensus.cpp
 
 CMakeFiles/nexad.dir/src/consensus/consensus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nexad.dir/src/consensus/consensus.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/nexa-core/src/consensus/consensus.cpp > CMakeFiles/nexad.dir/src/consensus/consensus.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/src/nexa-core/src/consensus/consensus.cpp > CMakeFiles/nexad.dir/src/consensus/consensus.cpp.i
 
 CMakeFiles/nexad.dir/src/consensus/consensus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nexad.dir/src/consensus/consensus.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/nexa-core/src/consensus/consensus.cpp -o CMakeFiles/nexad.dir/src/consensus/consensus.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/src/nexa-core/src/consensus/consensus.cpp -o CMakeFiles/nexad.dir/src/consensus/consensus.cpp.s
 
 CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o: CMakeFiles/nexad.dir/flags.make
 CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o: ../src/mempool/mempool.cpp
 CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o: CMakeFiles/nexad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o -MF CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o.d -o CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o -c /root/nexa-core/src/mempool/mempool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o -MF CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o.d -o CMakeFiles/nexad.dir/src/mempool/mempool.cpp.o -c /usr/local/src/nexa-core/src/mempool/mempool.cpp
 
 CMakeFiles/nexad.dir/src/mempool/mempool.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nexad.dir/src/mempool/mempool.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/nexa-core/src/mempool/mempool.cpp > CMakeFiles/nexad.dir/src/mempool/mempool.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/src/nexa-core/src/mempool/mempool.cpp > CMakeFiles/nexad.dir/src/mempool/mempool.cpp.i
 
 CMakeFiles/nexad.dir/src/mempool/mempool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nexad.dir/src/mempool/mempool.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/nexa-core/src/mempool/mempool.cpp -o CMakeFiles/nexad.dir/src/mempool/mempool.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/src/nexa-core/src/mempool/mempool.cpp -o CMakeFiles/nexad.dir/src/mempool/mempool.cpp.s
 
 CMakeFiles/nexad.dir/src/governance/governance.cpp.o: CMakeFiles/nexad.dir/flags.make
 CMakeFiles/nexad.dir/src/governance/governance.cpp.o: ../src/governance/governance.cpp
 CMakeFiles/nexad.dir/src/governance/governance.cpp.o: CMakeFiles/nexad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/nexad.dir/src/governance/governance.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/governance/governance.cpp.o -MF CMakeFiles/nexad.dir/src/governance/governance.cpp.o.d -o CMakeFiles/nexad.dir/src/governance/governance.cpp.o -c /root/nexa-core/src/governance/governance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/nexad.dir/src/governance/governance.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/governance/governance.cpp.o -MF CMakeFiles/nexad.dir/src/governance/governance.cpp.o.d -o CMakeFiles/nexad.dir/src/governance/governance.cpp.o -c /usr/local/src/nexa-core/src/governance/governance.cpp
 
 CMakeFiles/nexad.dir/src/governance/governance.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nexad.dir/src/governance/governance.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/nexa-core/src/governance/governance.cpp > CMakeFiles/nexad.dir/src/governance/governance.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/src/nexa-core/src/governance/governance.cpp > CMakeFiles/nexad.dir/src/governance/governance.cpp.i
 
 CMakeFiles/nexad.dir/src/governance/governance.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nexad.dir/src/governance/governance.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/nexa-core/src/governance/governance.cpp -o CMakeFiles/nexad.dir/src/governance/governance.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/src/nexa-core/src/governance/governance.cpp -o CMakeFiles/nexad.dir/src/governance/governance.cpp.s
 
 CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o: CMakeFiles/nexad.dir/flags.make
 CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o: ../src/api/exchange_api.cpp
 CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o: CMakeFiles/nexad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o -MF CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o.d -o CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o -c /root/nexa-core/src/api/exchange_api.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o -MF CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o.d -o CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o -c /usr/local/src/nexa-core/src/api/exchange_api.cpp
 
 CMakeFiles/nexad.dir/src/api/exchange_api.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nexad.dir/src/api/exchange_api.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/nexa-core/src/api/exchange_api.cpp > CMakeFiles/nexad.dir/src/api/exchange_api.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/local/src/nexa-core/src/api/exchange_api.cpp > CMakeFiles/nexad.dir/src/api/exchange_api.cpp.i
 
 CMakeFiles/nexad.dir/src/api/exchange_api.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nexad.dir/src/api/exchange_api.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/nexa-core/src/api/exchange_api.cpp -o CMakeFiles/nexad.dir/src/api/exchange_api.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/local/src/nexa-core/src/api/exchange_api.cpp -o CMakeFiles/nexad.dir/src/api/exchange_api.cpp.s
 
 # Object files for target nexad
 nexad_OBJECTS = \
@@ -173,7 +173,7 @@ nexad: CMakeFiles/nexad.dir/src/governance/governance.cpp.o
 nexad: CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o
 nexad: CMakeFiles/nexad.dir/build.make
 nexad: CMakeFiles/nexad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable nexad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/usr/local/src/nexa-core/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable nexad"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nexad.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +185,6 @@ CMakeFiles/nexad.dir/clean:
 .PHONY : CMakeFiles/nexad.dir/clean
 
 CMakeFiles/nexad.dir/depend:
-	cd /root/nexa-core/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/nexa-core /root/nexa-core /root/nexa-core/build /root/nexa-core/build /root/nexa-core/build/CMakeFiles/nexad.dir/DependInfo.cmake --color=$(COLOR)
+	cd /usr/local/src/nexa-core/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /usr/local/src/nexa-core /usr/local/src/nexa-core /usr/local/src/nexa-core/build /usr/local/src/nexa-core/build /usr/local/src/nexa-core/build/CMakeFiles/nexad.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/nexad.dir/depend
 

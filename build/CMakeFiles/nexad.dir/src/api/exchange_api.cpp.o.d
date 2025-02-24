@@ -1,6 +1,8 @@
 CMakeFiles/nexad.dir/src/api/exchange_api.cpp.o: \
- /root/nexa-core/src/api/exchange_api.cpp /usr/include/stdc-predef.h \
- /root/nexa-core/src/api/exchange_api.h /usr/include/c++/11/string \
+ /usr/local/src/nexa-core/src/api/exchange_api.cpp \
+ /usr/include/stdc-predef.h \
+ /usr/local/src/nexa-core/src/api/exchange_api.h \
+ /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

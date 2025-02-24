@@ -1,0 +1,22 @@
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/settings.rs
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/types.rs
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/opcodes.rs
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/clif_opt.isle
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/clif_lower.isle
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/inst_builder.rs
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/settings-x86.rs
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/settings-arm64.rs
+Writing generated file: /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/settings-riscv64.rs
+Rebuilding /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_opt.rs
+Writing ISLE-generated Rust code to /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_opt.rs
+Rebuilding /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_x64.rs
+Writing ISLE-generated Rust code to /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_x64.rs
+Rebuilding /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_aarch64.rs
+Writing ISLE-generated Rust code to /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_aarch64.rs
+Rebuilding /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_s390x.rs
+Writing ISLE-generated Rust code to /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_s390x.rs
+Rebuilding /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_riscv64.rs
+Writing ISLE-generated Rust code to /usr/local/src/nexa-core/target/release/build/cranelift-codegen-f45dd9f23e3537f1/out/isle_riscv64.rs
+fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
